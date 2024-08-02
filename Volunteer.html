@@ -1,0 +1,262 @@
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $availability = htmlspecialchars($_POST['availability']);
+    $interests = htmlspecialchars($_POST['interests']);
+
+    $to = 'your-email@example.com';
+    $subject = 'New Volunteer Application';
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\nAvailability: $availability\nInterests:\n$interests";
+    $headers = "From: $email";
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "success";
+    } else {
+        echo "error";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Nest Uganda HENU</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/vol.css">
+    <link rel="stylesheet" href="/css/mediascreen.css">
+    <link rel="stylesheet" href="/css/aos.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">HENU</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">Who we Are</a></li>
+                <li class="dropdown">
+                    <a href="KeyAreas.html">Key Areas</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Health.html">Health</a></li>
+                        <li><a href="Sanitation.html">Sanitation</a></li>
+                        <li><a href="Exercise.html">Physical Activities</a></li>
+                        <li><a href="Nutrition.html">Nutrition</a></li>
+                        <li><a href="conseling.html">conseling</a></li>
+                        <li><a href="ISHGs.html">ISHGs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#get-involved">Get Involved</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Volunteer.html">Volunteer</a></li>
+                        <li><a href="Donate.html">Donate</a></li>
+                        <li><a href="Partnership.html">Partnership</a></li>
+                    </ul>
+                </li>
+                <li><a href="News.html">News & Events</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section class="volunteer-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Join Our Volunteer Team</h1>
+                <p>Your time and skills can make a significant impact. Discover how you can contribute and be a part of something meaningful.</p>
+            </div>
+            
+            <section class="opportunities">
+                <h2>Volunteer Opportunities</h2>
+                <div class="opportunity-grid">
+                    <div class="opportunity-card">
+                        <h3>Event Coordinator</h3>
+                        <p>Play a key role in planning and executing our community events. Ideal for organized individuals with strong leadership skills.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                    <div class="opportunity-card">
+                        <h3>Administrative Support</h3>
+                        <p>Assist with office tasks, data entry, and organizational duties. Perfect for detail-oriented individuals looking to support behind the scenes.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                    <div class="opportunity-card">
+                        <h3>Direct Service</h3>
+                        <p>Engage directly with our beneficiaries, providing essential support and services. A rewarding role for those who enjoy hands-on work.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </section> <br> <br>
+            
+            <section class="application-form">
+                <h2>Apply to Volunteer</h2>
+                <form id="volunteer-form" action="submit-volunteer-application.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <input type="text" id="availability" name="availability" placeholder="e.g., Weekends, 2-4 PM">
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">Areas of Interest</label>
+                        <textarea id="interests" name="interests" placeholder="Describe your interests and skills"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                </form>
+                <div id="success-message" class="hidden">
+                    <p>Thank you for your application! We will get back to you soon.</p>
+                </div>
+            </section>
+            
+            <section class="testimonials">
+                <h2>What Our Volunteers Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <blockquote>
+                            <p>"Volunteering here has been a transformative experience. The community is vibrant, and the work is deeply rewarding."</p>
+                            <p>- Alex Smith</p>
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-item">
+                        <blockquote>
+                            <p>"I've had the chance to work on meaningful projects and meet wonderful people. It’s truly an inspiring environment."</p>
+                            <p>- Emily Johnson</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+
+                <!-- Footer Section -->
+                <footer>
+
+
+                    <section class="footer-content">
+                               
+                       <div class="AboutFooter">
+                       
+                           <div>
+                               <h2>About Us</h2>
+                           <div class="footer-About-cont">
+                               <p>
+                                   HENU, an indigenous NGO founded in 2007, is committed to improving the lives of disadvantaged
+                                    community members, with a special focus on older persons and orphans. As a member of HelpAge
+                                     International,
+                                    HENU has received prestigious awards for its innovative approach and community 
+                                    capacity building.
+                               </p>
+               
+                              
+                           </div>
+                           </div>
+                       </div>
+               
+                       <div class="footer_contact">
+                           <h2>contact Info</h2>
+                           <div class="email">
+                               <i class="fas fa-location"></i>
+                               <p>	HENU-Health Nest Uganda, P.O BOX,148 ENTENBBE</p>
+                           </div>
+                           <div class="email">
+                               <i class="fas fa-phone"></i>
+                               <p>+256-782 199 612</p>
+                           </div>
+                           <div class="email">
+                               <i class="fas fa-envelope"></i>
+                               <p>Henu@gmail.com</p>
+                           </div>
+                       </div>
+                       
+                       <div class="donate-footer" style="overflow: hidden;">
+                        <h2>Get Involved</h2>
+                        <p>Join us in making a difference. Your support can help us achieve our 
+                            mission and positively impact Eldery lives.
+                        </p>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                          <a href="donate.html" class="Learn"><p>Donate</p></a>
+                          <a href="volunteer.html" class="Learn"><p>Volunteer</p></a>
+                          <a href="partnership.html" class="Learn"><p>Partner with Us</p></a>
+                        </div>
+                      </div>
+                      
+               
+                   </section> <br> <br>
+    
+    
+               <section class="copy">
+                   <p class="copyright">&copy; 2024 Health Nest Uganda. All Rights Reserved. Designed & Developed with  by ENC@CodeLyf</p>
+                   <a href="#">back to top</a>
+               </section>
+                   </footer>
+                   <script src="js/script.js"></script>
+                   <script src="js/successstories.js"></script>
+                   <script src="/js/aos.js"></script>
+                   <script src="assets/fontawesome-free-6.4.2-web/js/all.js"></script>
+
+                   <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('volunteer-form');
+                const successMessage = document.getElementById('success-message');
+            
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+            
+                    const formData = new FormData(form);
+            
+                    fetch('submit-volunteer-application.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        if (data.trim() === "success") {
+                            successMessage.classList.remove('hidden');
+                            form.classList.add('hidden');
+                            form.reset();
+                        } else {
+                            alert('There was an error submitting your application. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting your application. Please try again.');
+                    });
+                });
+            });
+            
+                </script>
+               
+                   <script>
+                
+                     AOS.init({
+                       duration: 1000
+                     });
+                 
+                   </script>
+               </body>
+               </html>

@@ -1,0 +1,208 @@
+/* styles.css */
+
+
+.volunteer-page {
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    width: auto;
+    margin: 40px auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.opportunities {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 40px;
+}
+
+.opportunities h2 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.opportunity-grid {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* background: #4CAF50; */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.opportunity-card {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+.opportunity-card h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    padding-bottom: 0.8rem;
+}
+
+.opportunity-card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    padding-bottom: 0.8rem;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 0.8rem;
+}
+
+.btn-learn-more:hover {
+    background-color: goldenrod;
+    color: #ffffff;
+}
+
+.application-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+    /* background: #4CAF50; */
+}
+
+.application-form h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: #4CAF50;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form{
+    width: 70%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #4CAF50;
+}
+
+.testimonials {
+    margin-top: 40px;
+}
+
+.testimonials h2 {
+    font-size: 1.5em;
+    color: #4CAF50;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+}
+
+.testimonial-item {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-item blockquote {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    border-left: 4px solid #4CAF50;
+    padding-left: 15px;
+}
+
+.testimonial-item p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-align: right;
+    margin-top: 10px;
+}

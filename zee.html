@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        #related-news {
+            width: 30%;
+            margin-right: 2rem;
+        }
+
+        #news-details {
+            width: 70%;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content small {
+            color: #666;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .news-content img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .news-content p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .related-news {
+            margin-top: 2rem;
+        }
+
+        .related-news h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .related-news-item {
+            display: flex;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-news-item:hover {
+            background-color: #ececec;
+        }
+
+        .related-news-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .related-news-item div {
+            flex: 1;
+        }
+
+        .related-news-item h4 {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .related-news-item p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">NGO Name</div>
+            <ul class="nav-links">
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="KeyAreas.html">Key Areas</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="news-details">
+
+        <div class="news-content">
+            <h2 id="news-title">News Title</h2>
+            <small id="news-date">News Date</small>
+            <img id="news-image" src="" alt="News Image">
+
+            <h4 id="subheading1"></h4>
+            <p id="news-description">News Description</p> <br>
+            <div class="imgs">
+                <img src="news-image1" alt="News Image2">
+                <img src="news-image2" alt="News Image3">
+            </div>
+
+            <h4 id="subheading2"></h4>
+            <p id="news-description1">News Description</p>  <br>
+              <img src="news-image3" alt="">
+            <h4 id="subheading3"></h4>
+            <p id="news-description2">News Description</p> <br> 
+
+            <h4 id="subheading1"></h4>
+            <p id="news-description3">News Description</p>
+        </div>
+
+        <div class="related-news">
+            <h3>Related News</h3>
+            <div id="related-news-container"></div>
+        </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const newsId = urlParams.get('id');
+            // For demonstration, we'll use a simple switch statement to simulate fetching news details
+            const newsDetails = {
+                1: {
+                    title: 'Supporting Older Persons During COVID-19: A Week of Compassion and Outreach by Health Nest Uganda',
+                    subheading1: "Extending a Hand to Entebbe Hospital Nurses",
+                    subheading2: "Distributing Soap and Health Education in the Community",
+                    subheading3: "Reaching Out to Hundreds",
+                    date: '24th May 2020',
+                    image: 'assets/images/CovidResponse10.jpg',
+                    image1: 'assets/images/CovidResponse8.jpg',
+                    image2: 'assets/images/CovidResponse1.jpg',
+                    image3: 'assets/images/CovidResponse3.jpg',
+                    description: `Last week was a busy week for Health Nest Uganda volunteers as we 
+                    worked tirelessly to bring smiles to the faces of Older Persons during the challenging times of 
+                    COVID-19 and its resultant lockdown. Supported by members of the Lions Club of Entebbe and our community volunteers,
+                     the team embarked on a mission of compassion and support.`,
+                    description2: `The week began with the team extending a hand of support in the form of food items
+                    to the often-forgotten heroes—the nurses of Entebbe Hospital ART clinic. These dedicated professionals
+                    provide Non-Communicable Disease (NCD) services to Older Persons and distribute Antiretroviral (ARV)
+                    drugs to our sisters and brothers. Remarkably, 
+                    some of these nurses walk 20 kilometers daily to deliver these critical services.`,
+                    description3:`The rest of the week was spent in the community, where volunteers distributed soap to Older
+                     Persons to help maintain hygiene and combat COVID-19. The soap molecules’ hydrophobic tails bond with oils
+                      and fats, effectively breaking down the virus. Unfortunately, many Older Persons cannot afford a bar of soap,
+                       highlighting the importance of our efforts.
+                    While distributing soap, our volunteers also conducted health education sessions on COVID-19 to raise awareness
+                     and promote preventive measures. Each Older Person received two bars of soap, and the very vulnerable ones received 
+                     an additional 5 kilograms of posho.`
+                },
+                2: {
+                 title: 'Supporting Refugees in Gaba Katoogo',
+                 date: '31st August 2020',
+                 image: 'assets/images/Refuge1.jpg',
+                    image1: 'assets/images/Refuge2.jpg',
+                    image2: 'assets/images/Refuge4.jpg',
+                    image3: 'assets/images/CovidResponse9.jpg',
+                 description: `
+            On 29th August 2020, the HENU team reached out and supported 100 refugees from the Democratic 
+            Republic of Congo and Eritrea with soap, masks, and water purification tablets. These refugees are 
+            settled in Gaba Katoogo in Kampala, a wetland area facing floods. While some may argue against 
+            supporting those who settled in a swamp, humanitarian response prioritizes saving lives and preventing 
+            worsening conditions before assigning blame. These brothers and sisters are in double vulnerability, 
+            facing both displacement and environmental hazards. <br>
+            
+            In addition to the immediate needs of soap, masks, and water purification tablets, these refugees require 
+            further support to improve their living conditions. They are in desperate need of mosquito nets to protect 
+            against malaria, hand washing stations to maintain hygiene, and COVID-19 prevention messages to curb the 
+            spread of the virus. The stories we heard from the refugees highlighted their struggles with issues like rape 
+            and mental breakdowns due to trauma. Providing these essential items and services is crucial to ensure their 
+            safety and well-being. <br>
+            
+            The HENU team continues to work closely with the refugees, listening to their needs and providing as much 
+            support as possible. However, more assistance is urgently needed to address their critical needs. The refugees 
+            in Gaba Katoogo require a concerted effort from the humanitarian community to alleviate their suffering. 
+            Contributions towards mosquito nets, hand washing stations, and other necessities are highly welcome. Together, 
+            we can make a significant difference in their lives and help them navigate through these challenging times.
+        `
+    },
+
+
+
+                3: {
+                    title: 'Campaign for Accessible Healthcare: Ensuring Reliable Transportation for Older Persons in Entebbe Municipality',
+                    subheading1: `Addressing Healthcare Access Challenges`,
+                    subheading2: `Launching a Campaign for Transportation Support`,
+                    subheading3: `Call for Support`,
+                    subheading4: `How to Contribute`,
+                    date: '22nd Aprill 2024',
+                    image: 'assets/images/Refuge1.jpg',
+                    image1: 'assets/images/Refuge2.jpg',
+                    image2: 'assets/images/Refuge4.jpg',
+                    image3: 'assets/images/CovidResponse9.jpg',
+                    description: `Entebbe Municipality is home to a growing number of older persons who face
+                     significant challenges in accessing healthcare services due to transportation barriers. 
+                     Many of these individuals live with chronic health conditions that require regular medical attention. 
+                     However, the lack of a dedicated transportation solution has become a pressing issue affecting their overall
+                      well-being. Without reliable means of transportation to attend regular check-ups, 
+                      older persons are often forced to miss their appointments, resort to local herbs, and only seek 
+                      medical attention in emergencies.
+                     This situation contributes to an increased burden on emergency healthcare services.`,
+                    description2: `To address this pressing need, older persons have launched a campaign for
+                     financial support to acquire a dedicated vehicle for the transportation of older persons to healthcare facilities. 
+                     This vehicle will serve as a lifeline, ensuring they have reliable and timely access to essential medical services.
+                      The acquisition of a dedicated vehicle is not merely a logistical solution; it is an investment in the health, 
+                      dignity, and quality of life of older persons. By addressing transportation barriers,
+                       we pave the way for a community where every older person can age gracefully,
+                     maintain their health, and remain active participants in our shared community life.`,
+                    description3: `We are reaching out to compassionate individuals and organizations who share our commitment to the
+                     well-being of older persons and the promotion of accessible healthcare for all. The vehicle will be serviced 
+                     and maintained by Health Nest Uganda, an indigenous non-government organization comprising experts in aging and
+                      based in Entebbe Municipality. Your support can make a significant difference in the lives of our older residents.
+                       We believe that by working together,
+                     we can create a sustainable solution that positively influences the health and quality of life for our older persons.`,
+                    description4: `Any financial contribution towards the cause may be deposited into the Entebbe Municipality Older
+                     Persons SACCO Account at Centenary Bank, Kawuku Branch, Account number: 3202644779, or via crossed cheques deposited
+                      into the same account. A receipt will be issued for any support received. We are grateful to the Uganda Civil
+                       Aviation Authority, Child Prime Primary School, Friends of Charity Kiwafu Entebbe, Hon. Rose Tumusiime,
+                        Hon. Sherry Kalyebara, Hon. Gashaija Shaka for their contributions towards this call. We are also grateful 
+                        to the Mayor of Entebbe Municipality for supporting us in our outreach efforts.
+                     Any contribution will bring us one step closer to ensuring that our older persons receive the healthcare they deserve.`,
+                },
+                4: {
+                    title: 'HENU Volunteers and Friends Complete First Phase of Wisdom Centre',
+                    subheading1:'Services Offered at the Wisdom Centre',
+                    subheading2:'Call for Support',
+                    subheading3:'How to Contribute',
+                    date: '30th june 2020',
+                    image: 'related3.jpg',
+                    description: `Entebbe, Uganda - The Health Nest Uganda (HENU) volunteers and friends are proud to announce the 
+                    completion of the first phase of the Wisdom Centre. This milestone marks a significant achievement in our ongoing
+                     efforts to support older persons and the orphans under their care.
+                      Today, older persons inspected the Wisdom Centre and the newly acquired sewing machines, which will offer free
+                       training in tailoring to orphans. The Wisdom Centre is designed to be an intergenerational hub, 
+                      providing a space for the exchange of knowledge and wisdom between generations. The Centre will enable older
+                       persons to learn how to use modern technology, such as smartphones, computers, WhatsApp, Facebook, and other
+                        social media platforms, thereby bridging the technological gap between young and older generations.
+                       This digital inclusion initiative ensures no one is left behind.
+                      In return, older persons will impart traditional skills and knowledge to the youth, such as crafting.
+                       Additionally, a poultry shed has been constructed at the Centre to improve nutritional intake for vulnerable older
+                        persons and orphans, as well as to generate income.`,
+                    description1: `Vocational Skills Training: Tailoring training for orphans under the care of older persons.
+                          Day Care Services: Support for older persons without caregivers during the day.
+                          Counseling Services: Available for both young and older persons.
+                          Cultural Exhibitions: Showcasing cultural heritage and fostering intergenerational understanding.
+                          Fellowships: Opportunities for older persons and the young to share and learn from each other.
+                          Age-Friendly Physical Activities: Exercises to promote healthy living and independence.
+                          Specialized Treatment and Rehabilitation Services: Periodic medical and rehabilitation services.
+                          Internships and Research: Bridging the knowledge gap and influencing policy on the care and support for older persons.
+                          The Centre's construction has been made possible through generous donations from friends and members. The Uganda National Social Security Fund, in its social corporate responsibility, donated sewing machines. However, the Centre still requires furniture to become fully operational.`,
+                    description2: `We are grateful for all the support received thus far. The challenge of acquiring furniture remains,
+                     but with continued effort and donations, we will soon overcome this hurdle and make the Centre fully operational.
+                      Together, we can make
+                     a difference and ensure that older persons and orphans in our community receive the support and services they need.`,
+                    description3: `Your support can help us complete this vital project. Contributions can be made to the Entebbe Municipality Older Persons SACCO Account at Centenary Bank, Kawuku Branch, Account number: 3202644779, or via crossed cheques deposited into the same account.
+                     A receipt will be issued for any support received.Thank you for your commitment to making a positive impact in our community.`,
+                },
+
+
+                5: {
+                    title: 'HENU Holds After Action Review Meeting on COVID-19 Response',
+                    date: '19th June 2020',
+                    image: 'assets/images/AfterCovid.jpg',
+                    image1: 'assets/images/AfterCovid2.jpg',
+                    image2: 'assets/images/AfterCovidCertificate.jpg',
+                    image3: 'assets/images/AfterCovid3.jpg',
+                    description: `Entebbe, Uganda - On June 18, 2020, Health Nest Uganda (HENU) convened an After Action Review
+                     (AAR) meeting with key stakeholders to evaluate its COVID-19 response efforts aimed at protecting older persons 
+                     and their families. An AAR is a structured debriefing process that analyzes what happened, why it happened, 
+                     and how future efforts can be improved. The meeting was attended by members of the Entebbe Lions Club, including 
+                     its president, the Entebbe Deputy Resident District Commissioner, Counsellors for Older Persons,
+                     leaders of Older Persons Community Groups, and HENU volunteers.`,
+                    description1: `During the meeting, HENU awarded certificates of appreciation to stakeholders and volunteers,
+                     recognizing their crucial role in the response effort. The collaborative efforts enabled the team to reach over 
+                     2,000 older persons within the Entebbe Sub-district, providing them with soap,
+                     sugar, posho, and personal protective equipment (PPEs).`,
+                    description2: `Despite these achievements, many older persons remain unreached and continue to 
+                    be highly vulnerable to COVID-19. As we adapt to the "new normal," it is imperative to address the
+                     needs of older persons who are technologically
+                     disadvantaged and in precarious situations. Access to healthcare remains a significant challenge
+                      for this demographic.`,
+                    description3: `HENU emphasizes the importance of partnerships in addressing these ongoing issues.
+                     By working together, we can ensure that no older person is
+                     left behind in our collective efforts to combat the pandemic and support the most vulnerable in our communities.`,
+                },
+                
+                6: {
+                    title: 'Health Nest Uganda Fosters Community Spirit Among Older Persons',
+                    date: '12th April 2019',
+                    image: 'assets/images/busukuma1.jpg',
+                    image1: 'assets/images/busukuma12.jpg',
+                    image2: 'assets/images/busukuma3.jpg',
+                
+                    description: `Busukuma, Wakiso District - On April 11, 2019, Health Nest Uganda (HENU) 
+                    facilitated a memorable day of learning and sharing when older persons from Entebbe met with their 
+                    counterparts in Wamilongo village, Busukuma. This event was organized in collaboration with the Infectious 
+                    Diseases Institute (IDI),
+                    aiming to inspire and empower the older persons of Busukuma.`,
+                    description1: `The older persons of Wamilongo were overjoyed as they realized they could achieve
+                     similar successes to those of their colleagues in Entebbe. The gathering served as a platform for 
+                     older persons to exchange experiences, ideas,
+                     and strategies for addressing their unique challenges.`,
+                    description2: `Through this partnership, HENU and IDI sought to stimulate the formation of groups among
+                     the older persons of Busukuma. These groups will provide a supportive environment where members can discuss
+                      and work together to address their concerns,
+                     fostering a sense of community and collective action.`,
+                    description3: `Such initiatives highlight the importance of community support
+                     and collaboration in improving the well-being and quality of life for older persons. 
+                     HENU remains committed to facilitating these connections and providing resources 
+                    to help older persons thrive in their communities.`,
+                },
+                
+                7: {
+                    title: "Health Nest Uganda Warns Entebbe's Older Persons Against Engaging in Petty Politics",
+                    date: '14th May 2018',
+                    image: 'assets/images/CheapPolitics3.jpg',
+                    image1: 'assets/images/CheapPolitics4.jpg',
+                    image2: 'assets/images/CheapPolitics2.jpg',
+                    image3: 'assets/images/CheapPolitics.jpg',
+                    description: `Entebbe, Uganda - Health Nest Uganda (HENU) Coordinator Arthur Namara has urged older 
+                    persons in Entebbe Municipality to focus on income-generating projects rather than engaging in petty politics. 
+                    The call was made during the handover of a briquette-making machine
+                     to Kawelimidde Elderly Association at Entebbe Division (B) offices on Monday.`,
+                    description1: `Namara emphasized that some older persons waste valuable time on politics instead of
+                     starting and managing projects that could lift them out of poverty. He stressed that HENU is a non-partisan 
+                    NGO and warned that political biases could cause older persons to miss out on beneficial initiatives.`,
+                    description2: `He also encouraged older persons to collaborate with the youth on these projects.
+                     Namara highlighted the upcoming National Older Persons Act, which aims to protect older persons from abuse.
+                      He further discussed the need to engage the Boda Boda fraternity
+                     and taxi drivers to ensure respect for older persons in public transportation and on the roads.`,
+                    description3: `The donated briquette-making machine will benefit older persons in Kiwafu ward by providing an alternative fuel source, generating income, and aiding in tree conservation. Similar technology has benefited older persons in Katabi, Kitubulu, Bugonga, Nkumba, and Kabaale parishes.
+
+The event was attended by Entebbe Division (B) Chairman Stanley Namayirira, Deputy Mayor Richard Sekyondo, and MP Tumusiime, who also handed over hoes to the older persons, which she had lobbied for in parliament.`,
+                },
+                
+              
+                // Add other news details here
+            };
+
+
+
+            
+
+            function handleImageLoadError(imgElement) {
+            imgElement.style.display = 'none';
+        }
+
+        if (newsId && newsDetails[newsId]) {
+            const news = newsDetails[newsId];
+       
+            document.getElementById('news-title').textContent = news.title;
+            document.getElementById('news-date').textContent = news.date;
+
+            const imageElements = {
+                'news-image': news.image,
+                'news-image1': news.image1,
+                'news-image2': news.image2,
+                'news-image3': news.image3
+            };
+
+            for (const [id, src] of Object.entries(imageElements)) {
+                const imgElement = document.getElementById(id);
+                if (imgElement) {
+                    imgElement.onload = () => imgElement.style.display = 'block';
+                    imgElement.onerror = () => handleImageLoadError(imgElement);
+                    imgElement.src = src;
+                }
+            }
+
+            document.getElementById('news-description').textContent = news.description;
+            document.getElementById('news-description1').textContent = news.description1;
+            document.getElementById('news-description2').textContent = news.description2;
+            document.getElementById('news-description3').textContent = news.description3;
+            document.getElementById('subheading1').textContent = news.subheading1;
+            document.getElementById('subheading2').textContent = news.subheading2;
+            document.getElementById('subheading3').textContent = news.subheading3;
+            document.getElementById('subheading4').textContent = news.subheading4;
+
+
+                // Populate related news (dummy example)
+                if (newsId && newsDetails[newsId]) {
+        // Your existing code
+
+        // Populate related news (dummy example)
+        const relatedNews = [
+            { title: "Helping the Elderly During Crisis", image: 'assets/images/related1.jpg', url: 'news.html?id=2' },
+            { title: "Community Outreach Programs", image: 'assets/images/related2.jpg', url: 'news.html?id=3' },
+            { title: "Health Initiatives and Support", image: 'assets/images/related3.jpg', url: 'news.html?id=4' }
+        ];
+
+        const relatedNewsContainer = document.getElementById('related-news-container');
+
+        if (relatedNewsContainer) {
+            relatedNews.forEach(newsItem => {
+                console.log('Creating news item:', newsItem); // Debugging line
+
+                const newsLink = document.createElement('a');
+                newsLink.href = newsItem.url;
+                newsLink.className = 'related-news-item';
+
+                const newsImage = document.createElement('img');
+                newsImage.src = newsItem.image;
+                newsImage.alt = newsItem.title;
+                newsImage.onerror = () => handleImageLoadError(newsImage);
+
+                const newsText = document.createElement('div');
+                const newsTitle = document.createElement('h4');
+                newsTitle.textContent = newsItem.title;
+                newsText.appendChild(newsTitle);
+
+                newsLink.appendChild(newsImage);
+                newsLink.appendChild(newsText);
+                relatedNewsContainer.appendChild(newsLink);
+            });
+        } else {
+            console.error('Related news container not found'); // Debugging line
+        };
+    } 
+    })
+    </script>
+</body>
+</html>

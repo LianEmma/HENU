@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Gallery</title>
+    <link rel="stylesheet" href="/css/Gallery.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mediascreen.css">
+</head>
+<body>
+    <header style="  background: #2e7003; display: flex; align-items: center;justify-content: center; flex-direction: column;">
+        <h1>Our Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h2>Our Work in Action</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/Images/CheapPolitics.jpg" alt="Event 1">
+                    <div class="overlay">
+                        <p>Event 1 Description</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Images/busukuma1.jpg" alt="Event 2">
+                    <div class="overlay">
+                        <p>Event 2 Description</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Images/Accesshealth1.jpg" alt="Event 3">
+                    <div class="overlay">
+                        <p>Event 3 Description</p>
+                    </div>
+                </div>
+                <!-- Add more gallery items as needed -->
+            </div>
+        </section>
+    </main>
+<!-- Lightbox HTML -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <button class="nav-button prev" id="prev-btn">&#10094;</button>
+    <button class="nav-button next" id="next-btn">&#10095;</button>
+    <div class="lightbox-content-container">
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <div id="lightbox-caption"></div>
+</div>
+
+
+
+
+                <!-- Footer Section -->
+                <footer>
+
+
+                    <section class="footer-content">
+                               
+                       <div class="AboutFooter">
+                       
+                           <div>
+                               <h2>About Us</h2>
+                           <div class="footer-About-cont">
+                               <p>
+                                   HENU, an indigenous NGO founded in 2007, is committed to improving the lives of disadvantaged
+                                    community members, with a special focus on older persons and orphans. As a member of HelpAge
+                                     International,
+                                    HENU has received prestigious awards for its innovative approach and community 
+                                    capacity building.
+                               </p>
+               
+                              
+                           </div>
+                           </div>
+                       </div>
+               
+                       <div class="footer_contact">
+                           <h2>contact Info</h2>
+                           <div class="email">
+                               <i class="fas fa-location"></i>
+                               <p>	HENU-Health Nest Uganda, P.O BOX,148 ENTENBBE</p>
+                           </div>
+                           <div class="email">
+                               <i class="fas fa-phone"></i>
+                               <p>+256-782 199 612</p>
+                           </div>
+                           <div class="email">
+                               <i class="fas fa-envelope"></i>
+                               <p>Henu@gmail.com</p>
+                           </div>
+                       </div>
+                       
+                       <div class="donate-footer" style="overflow: hidden;">
+                        <h2>Get Involved</h2>
+                        <p>Join us in making a difference. Your support can help us achieve our 
+                            mission and positively impact Eldery lives.
+                        </p>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                          <a href="donate.html" class="Learn"><p>Donate</p></a>
+                          <a href="volunteer.html" class="Learn"><p>Volunteer</p></a>
+                          <a href="partnership.html" class="Learn"><p>Partner with Us</p></a>
+                        </div>
+                      </div>
+                      
+               
+                   </section> <br> <br>
+    
+    
+               <section class="copy">
+                   <p class="copyright">&copy; 2024 Health Nest Uganda. All Rights Reserved. Designed & Developed with  by ENC@CodeLyf</p>
+                   <a href="#">back to top</a>
+               </section>
+                   </footer>
+                   <script src="js/script.js"></script>
+                   <script src="js/successstories.js"></script>
+                   <script src="/js/aos.js"></script>
+                   <script src="assets/fontawesome-free-6.4.2-web/js/all.js"></script>
+
+                   
+    <script>
+        // scripts.js
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.querySelector('.close');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+        
+            if (!lightbox || !lightboxImg || !lightboxCaption || !closeBtn || !prevBtn || !nextBtn) {
+                console.error('Error: One or more lightbox elements not found.');
+                return;
+            }
+        
+            const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+            let currentIndex = -1;
+        
+            function openLightbox(event) {
+                const img = event.target;
+                currentIndex = galleryImages.indexOf(img);
+        
+                if (currentIndex === -1) return;
+        
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.getAttribute('alt');
+                lightbox.style.display = 'block';
+            }
+        
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+        
+            function showImage(index) {
+                if (index >= 0 && index < galleryImages.length) {
+                    const img = galleryImages[index];
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = img.getAttribute('alt');
+                    currentIndex = index;
+                }
+            }
+        
+            function showPrevImage() {
+                if (currentIndex > 0) {
+                    showImage(currentIndex - 1);
+                } else {
+                    // Loop to the last image
+                    showImage(galleryImages.length - 1);
+                }
+            }
+        
+            function showNextImage() {
+                if (currentIndex < galleryImages.length - 1) {
+                    showImage(currentIndex + 1);
+                } else {
+                    // Loop to the first image
+                    showImage(0);
+                }
+            }
+        
+            galleryImages.forEach(img => {
+                img.addEventListener('click', openLightbox);
+            });
+        
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrevImage);
+            nextBtn.addEventListener('click', showNextImage);
+        
+            window.addEventListener('click', function(event) {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+        
+        
+        
+            </script>
+        
+               
+                   <script>
+                
+                     AOS.init({
+                       duration: 1000
+                     });
+                 
+                   </script>
+
+
+               </body>
+               </html>

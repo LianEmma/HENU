@@ -1,0 +1,276 @@
+
+@media screen and (max-width: 1084px) {
+    .causes-cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .causes-cards .card{
+        width: 100%;
+    }
+
+    .blog-posts{
+        width: 200px;
+    }
+    .blog-card{
+        width: 150px;
+    }
+    .trending-event{
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 780px) {
+    section{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    #mini-about{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mini-img{
+        width: 100%;
+    }
+
+    .mini-about-desc{
+        width: 100%;
+    }
+
+    .mini-about-desc small{
+        display: none;
+    }
+
+    .story-card{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .story-content{
+        padding: 0.8rem;
+    }
+
+    .Testmonials{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .Testmonial-card{
+        width: 100%;
+    }
+
+    .News{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #blog{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-posts{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .blog-card{
+        width: 100%;
+    }
+
+    .team-cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+
+    .team-member{
+        width: 100%;
+    }
+
+
+/* 
+    ////////contact//////// */
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact form{
+        width: 100%;
+    }
+
+    footer{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 1rem;
+    }
+    .footer-content{
+        width: 100%;
+        height: fit-content;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-content > div{
+        width: 100%;
+    }
+
+    .causes-cards{
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .causes-cards .card{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: whitesmoke;
+    }
+
+    .causes-cards .card .mini-cause-img{
+        height: 400px;
+    }
+    /* ///////////////About//// */
+
+    .history .img{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .history .img #img{
+        width: 100%;
+        height: 400px;
+    }
+/* 
+    .Newsletter{
+        padding: 0.8rem;
+    } */
+}
+@media screen and (max-width: 890px) {
+    section{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact form{
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .history .img{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mission-img{
+        width: 600px;
+    }
+    .mission-content{
+        padding: 0.8rem;
+    }
+
+    .team-cards{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team-cards .team-member{
+        width: 100%;
+    }
+
+    .vision > div{
+        display: flex;
+        flex-direction: column;
+        padding: 0.8rem;
+    }
+
+    #Newsletter{
+        padding: 0.8rem;
+    }
+    .newsletter-form{
+        padding: 0.8rem;
+        width: 100%;
+    }
+
+}
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgb(21, 88, 4);
+        text-align: center;
+    }
+
+    .nav-links li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem;
+        display: block;
+    }
+
+    .nav-links li:hover {
+        padding: 0.5rem;
+        background: goldenrod;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+
+
