@@ -1,0 +1,97 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.mainBoard{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    font-family: sans-serif;
+    gap: 10px;
+    padding: 0.8rem;
+}
+
+.img-cont{
+    width: 100%;
+    height: 550px;
+}
+
+.mainBoard img{
+    width: 100%;
+    height: 100%;
+}
+
+#content{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+#NameZ{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+/* ///////////////SideCont/////////// */
+#sideCont{
+    box-shadow: inset 0px 0px 5px;
+    position: relative;
+    overflow: hidden;
+    /* max-width: 300px; */
+    width: 300px;
+    padding: 0.4rem;
+}
+
+/* .member-preview{
+    background: red;
+} */
+
+#sideCont h2{
+    padding-block: 0.8rem;
+}
+
+
+.member-preview {
+        width: 100%;
+        height: 100px; /* Adjust height as needed */
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+        color: white; /* Text color for better visibility */
+        background-size: cover;
+        background-position: center;
+        background: red;
+        position: relative;
+        margin-bottom: 2px;
+}
+
+.member-preview::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+        z-index: 1;
+}
+.member-preview h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        margin: 0;
+        z-index: 2; /* Ensures the text is above the overlay */
+        position: relative;
+}
+
+.member-preview a {
+        text-decoration: none;
+        color: inherit;
+}
+
+
+@media screen and (max-width: 780px) {
+    .mainBoard{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    #sideCont{
+        width: 100%;
+    }
+}
