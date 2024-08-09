@@ -49,7 +49,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "assets/Images/saba.jpg",
+        pic: "assets/Images/sabaZ.jpg",
         cont:`Saba Zubedda is a dedicated Administrator at Health Nest Uganda (HENU), 
         an indigenous non-profit organization committed to empowering communities and promoting dignity, equality,
         and independence among individuals, especially the elderly and youth.
@@ -66,7 +66,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "",
+        pic: "assets/Images/saba.jpg",
         cont: `About Elizabeth Najjemba Kaleeba coming soon...`
     },
     Member5:{
