@@ -7,7 +7,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "/assets/Images/arthur.jpg",
+        pic: "assets/Images/arthur.jpg",
         cont: `Namara Arthur Araali, a prominent Ugandan Gerontologist and community development expert, 
         has made significant contributions to health education, counseling, and advocacy for the elderly. 
         Holding a Master's degree in Gerontology from the University of Southampton,
@@ -31,7 +31,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "/assets/Images/bishop.jpg",
+        pic: "assets/Images/bishop.jpg",
         cont: `Bishop Samuel Balagadde Ssekkadde is a respected figure in Uganda's Anglican community, 
         having served as the Bishop of Namirembe from 1994 to 2009. 
         His tenure as bishop was marked by a commitment to spiritual leadership and community development.
@@ -49,7 +49,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "/assets/images/saba.jpg",
+        pic: "assets/Images/saba.jpg",
         cont:`Saba Zubedda is a dedicated Administrator at Health Nest Uganda (HENU), 
         an indigenous non-profit organization committed to empowering communities and promoting dignity, equality,
         and independence among individuals, especially the elderly and youth.
@@ -76,7 +76,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "/assets/images/mutembuzii.jpg",
+        pic: "assets/Images/mutembuzii.jpg",
         cont: `+256772916894 
         jmutembuzi10@yahoo.co.uk
 
@@ -96,7 +96,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "/assets/images/Edward.jpg",
+        pic: "assets/Images/Edward.jpg",
         cont: `Kafeero Edward is a committed community mobiliser with Health Nest Uganda (HENU). 
         He has a strong skill in interpersonal relationship and a very good team builder.
         His work with HENU reflects a commitment to promoting independence and equality,
@@ -107,7 +107,7 @@ let Members = {
         Facebook:   "",
         No: "",
         mail:"",
-        pic: "/assets/images/asiimwe.jpg",
+        pic: "assets/Images/asiimwe.jpg",
         Duty: "Programs Coordinator",
         cont: `Asiimwe Sylvia, the Program Coordinator at HealthNest Uganda, 
         has been a pivotal force in the organization since August 2015. With over nine years of dedicated service, 
